@@ -32,7 +32,7 @@ export const SubscriptionShow = () => {
   const fetchData = useCallback(async () => {
     if (!companyId) return
     try {
-      const res = await fetch(`/api/v1/ops/companies/${companyId}/subscription`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || ''}/api/v1/ops/companies/${companyId}/subscription`, {
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem('ops_access_token')}`,
         },

@@ -21,7 +21,7 @@ export const QuotaShow = () => {
 
   useEffect(() => {
     if (!companyId) return
-    fetch(`/api/v1/ops/companies/${companyId}/quotas`, {
+    fetch(`${import.meta.env.VITE_API_URL || ''}/api/v1/ops/companies/${companyId}/quotas`, {
       headers: {
         Authorization: `Bearer ${sessionStorage.getItem('ops_access_token')}`,
       },
