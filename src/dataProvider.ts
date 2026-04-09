@@ -1,7 +1,7 @@
 import type { DataProvider, GetListParams, GetOneParams, UpdateParams } from 'react-admin'
 import { TOKEN_KEY } from './authProvider'
 
-const API_BASE = '/api/v1/ops'
+const API_BASE = `${import.meta.env.VITE_API_URL || ''}/api/v1/ops`
 
 function getAuthHeaders(): Record<string, string> {
   const token = sessionStorage.getItem(TOKEN_KEY)
